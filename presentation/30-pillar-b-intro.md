@@ -6,9 +6,7 @@
 
 ## Part of data quality is provenance
 
-::: {.img-placeholder}
-IMAGE PLACEHOLDER: "monkey" picture
-:::
+![Infinite monkeys, infinite data?](images/monkeys.jpg)
 
 ## Gold standard
 
