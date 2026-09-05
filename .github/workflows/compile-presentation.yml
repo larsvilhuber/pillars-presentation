@@ -1,0 +1,189 @@
+name: deploy-landing-page
+
+# Only run this when the master branch changes
+on:
+  push:
+    branches:
+    - main
+  #schedule:
+    # hourly run
+    #- cron: '*/10 * * * *'
+    # daily run
+    #- cron: '3 7 * * *'
+    # weekly run
+    #- cron: '3 7 * * 1'
+  workflow_dispatch:
+    inputs:
+      create_deposit:
+        type: boolean
+        description: 'Create a Dataverse deposit'
+        default: false
+      refresh_website:
+        type: boolean
+        description: 'Refresh the website'
+        default: true
+
+# This job installs dependencies, builds the book, and pushes it to `gh-pages`
+jobs:
+
+  compile-quarto:
+    runs-on: ubuntu-24.04
+    steps:
+
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+
+    - name: Setup Pages
+      id: pages
+      uses: actions/configure-pages@v3
+  
+    # Let's do the Quarto
+    - name: Set up Quarto
+      uses: quarto-dev/quarto-actions/setup@v2
+    - name: Install R
+      uses: r-lib/actions/setup-r@v2
+      with:
+        r-version: '4.4.2'
+
+    - name: Install R Dependencies 
+      uses: r-lib/actions/setup-renv@v2
+      with:
+        cache-version: 1
+    # - name: Set Environment Variables
+    #   run: |
+    #     echo "QUALTRICS_BASE_URL=${{ secrets.QUALTRICS_BASE_URL }}" >> $GITHUB_ENV
+    #     echo "QUALTRICS_API_KEY=${{ secrets.QUALTRICS_API_KEY }}" >> $GITHUB_ENV
+
+          
+    - name: Render Landing Page
+      env:
+        QUARTO_PRINT_STACK: true
+    #   uses: quarto-dev/quarto-actions/render@v2
+    #   with:
+    #     path: ./presentation
+    # Set the test statement to include "&& exit 1" to force failure if variable is not set
+      run: |
+        echo "xxxxxxxxxx${QUALTRICS_BASE_URL}xxxxxxxxxx"
+        test -z "${QUALTRICS_BASE_URL}" && echo "QUALTRICS_BASE_URL is not set" 
+        quarto render presentation/index.qmd --output-dir _html
+    - name: Upload HTML Artifact
+      id: artifact-upload-step2
+      uses: actions/upload-artifact@v4
+      with:
+          name: artifact-html
+          path: _html/presentation
+          retention-days: 1
+    - name: Upload data artifact
+      id: artifact-upload-data
+      if: ${{ github.event.inputs.create_deposit == 'true' }}
+      uses: actions/upload-artifact@v4
+      with:
+          name: artifact-data
+          path: data
+          retention-days: 1
+
+     
+
+
+    # now make a PDF out of it
+  create-pdf:
+    needs: compile-quarto
+    runs-on: ubuntu-latest
+    steps:
+    - name: Download quarto artifact
+      uses: actions/download-artifact@v4
+      with:
+        name: artifact-html
+        path: _html
+    - name: Check permissions
+      run: |
+        ls -la _html
+        chmod -R a+rwX _html
+        ls -la _html
+  
+    - name: Create PDF
+      uses: addnab/docker-run-action@v3
+      with:
+        image: astefanutti/decktape
+        options: -v ${{ github.workspace }}/_html:/slides 
+        run: |
+          node /decktape/decktape.js --chrome-path /usr/bin/chromium-browser --chrome-arg=--no-sandbox --chrome-arg=--disable-gpu index.html index.pdf
+
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: artifact-presentation-pdf
+        path: _html/index.pdf
+  deploy-all:
+    runs-on: ubuntu-22.04
+    needs: 
+      - compile-quarto
+      - create-pdf
+    if: ${{ github.event.inputs.refresh_website == 'true' || github.event_name == 'push' }}
+    steps:
+    # Pull down all artifacts
+    
+    - name: Download HTML Artifacts
+      uses: actions/download-artifact@v4
+      with:
+            path: .
+            pattern: artifact-html
+    - name: Download Pres PDF
+      uses: actions/download-artifact@v4
+      with:
+            path: .
+            pattern: artifact-presentation-pdf
+   # Adjust this to reflect what you are posting
+    - name: Move stuff
+      run: |
+          set -ev
+          ls -lR
+          mv artifact-html website
+          mv artifact-presentation-pdf/index.pdf website/presentation.pdf
+    # Prepare the GitHub Pages action
+    - name: prepare GitHub Pages action
+      uses: actions/upload-pages-artifact@v3.0.1    
+      with:
+        path: ./website
+  
+  publish:
+    needs: deploy-all
+    if: ${{ github.event.inputs.refresh_website == 'true' || github.event_name == 'push' }}
+    # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
+    permissions:
+      pages: write      # to deploy to Pages
+      id-token: write   # to verify the deployment originates from an appropriate source
+
+    # Deploy to the github-pages environment
+    # environment:
+    #   name: github-pages
+    #   url: ${{ steps.deployment.outputs.page_url }}
+
+    # Specify runner + deployment step
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4 
+  preserve:
+    needs: compile-quarto
+    runs-on: ubuntu-latest
+    if: ${{ github.event.inputs.create_deposit == 'true' }}
+    steps:
+    - name: Download quarto artifact
+      uses: actions/download-artifact@v4
+      with:
+        name: artifact-data
+        path: data
+    - name: Send data to Dataverse 
+      uses: larsvilhuber/dataverse-uploader@v1.7.2
+      with:
+        DATAVERSE_TOKEN: ${{secrets.DATAVERSE_TOKEN}}
+        DATAVERSE_SERVER: ${{secrets.DATAVERSE_SERVER}}
+        DATAVERSE_DATASET_DOI: ${{secrets.DATAVERSE_DATASET_DOI}}
+        GITHUB_DIR: data
+        DELETE: True
+        PUBLISH: False
+        

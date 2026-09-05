@@ -1,0 +1,96 @@
+---
+title: "Credibility of Economic Research"
+author:
+  - "Lars Vilhuber"
+date: "TBD" # Uppsala talk date
+format: 
+  revealjs:
+    scrollable: true
+    margin: 0
+    code-overflow: wrap
+    reference-location: document
+    widescreen: false
+    center: true
+    transition: slide
+    theme: [night, style.css]
+    self_contained: false
+    logo: logo.png
+    footer: ""
+    reveal_options:
+        slideNumber: true
+        previewLinks: false
+        chalkboard:
+          theme: chalkboard
+          toggleNotesButton: true
+    reveal_plugins: ["chalkboard"]
+
+---
+
+
+```{r config,include=FALSE}
+library(readr)
+library(here)
+library(knitr)
+library(dplyr)
+library(ggplot2)
+library(qrcode)
+
+source(here::here("presentation",'global-libraries.R'))
+# The repository name
+
+message(Sys.getenv("GITHUB_REPOSITORY"))
+
+# Process the repository name to generate the URL
+# - split the two components
+# - combine them into a URL with 'github.io' in the middle
+
+SUBDIRECTORY <- "" # Leave this empty if this file is in the main directory of the repository
+
+GITHUB_REPOSITORY <- Sys.getenv("GITHUB_REPOSITORY")
+GITHUB_REPOSITORY_PARTS <- strsplit(GITHUB_REPOSITORY, "/")[[1]]
+REPOSITORY_URL <- paste0("https://github.com/", GITHUB_REPOSITORY)
+
+WEBSITE_URL <- paste0("https://", GITHUB_REPOSITORY_PARTS[1], ".github.io/", GITHUB_REPOSITORY_PARTS[2], "/", SUBDIRECTORY)
+WEBSITE_SHORT <- paste0(GITHUB_REPOSITORY_PARTS[1], ".github.io/", GITHUB_REPOSITORY_PARTS[2], "/", SUBDIRECTORY)
+```
+
+```{r, child=c(here::here("presentation",'00-follow-along.md'))}
+```
+
+```{r, child=c(here::here("presentation",'00-extra-title-slide.md'))}
+```
+
+```{r, child=c(here::here("presentation",'10-overview.md'))}
+```
+
+```{r, child=c(here::here("presentation",'20-pillar-a-data-quality.md'))}
+```
+
+```{r, child=c(here::here("presentation",'30-pillar-b-intro.md'))}
+```
+
+```{r, child=c(here::here("presentation",'03-sp500.md'))}
+```
+
+```{r, child=c(here::here("presentation",'05-fraud.md'))}
+```
+
+```{r, child=c(here::here("presentation",'10-what-can-you-do.md'))}
+```
+
+```{r, child=c(here::here("presentation",'40-pillar-c-code.md'))}
+```
+
+```{r, child=c(here::here("presentation",'50-pillar-d-documentation.md'))}
+```
+
+```{r, child=c(here::here("presentation",'90-thoughts-future-paths.md'))}
+```
+
+
+# The end!
+
+
+```{r, child=c(here::here('99-links.md'))}
+```
+

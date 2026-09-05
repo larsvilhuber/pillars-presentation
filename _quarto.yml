@@ -1,0 +1,6 @@
+format:
+  html:
+    toc: true
+    number-sections: true
+    code-overflow: wrap
+    reference-location: document

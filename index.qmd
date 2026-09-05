@@ -1,0 +1,85 @@
+---
+title: "Credibility of Economic Research"
+subtitle: "Four Pillars, and Thoughts on Future Paths"
+author:
+  - Lars Vilhuber
+date: "TBD"
+---
+
+```{r config,include=FALSE}
+library(here)
+
+# The repository name
+
+message(Sys.getenv("GITHUB_REPOSITORY"))
+
+# Process the repository name to generate the URL
+# - split the two components
+# - combine them into a URL with 'github.io' in the middle
+
+GITHUB_REPOSITORY <- Sys.getenv("GITHUB_REPOSITORY")
+GITHUB_REPOSITORY_PARTS <- strsplit(GITHUB_REPOSITORY, "/")[[1]]
+REPOSITORY_URL <- paste0("https://github.com/", GITHUB_REPOSITORY)
+WEBSITE_URL <- paste0("https://", GITHUB_REPOSITORY_PARTS[1], ".github.io/", GITHUB_REPOSITORY_PARTS[2])
+```
+
+<!--
+This is the article-length, textual companion to the slide deck in `presentation/`.
+It follows the same four-pillar structure. Each section below is scaffolding:
+a short lead-in plus a TODO marking what still needs to be written out in full.
+Cross-check against `presentation/*.md` for the talking points to expand on,
+and replace the [TODO: ...] and [TBD] markers with real prose/citations.
+-->
+
+## Introduction
+
+<!-- TODO: motivate the "credibility of economic research" framing; why four pillars, why now -->
+
+Economic research earns its credibility along (at least) four largely independent
+dimensions: the quality of its data, the provenance of that data, the quality of
+its code, and the quality of its documentation. This article expands, in prose,
+on a talk of the same name; it follows the same four pillars and closes with some
+thoughts on future paths.
+
+## The Four Pillars
+
+<!-- TODO: expand into a short paragraph per pillar, cross-referencing the slide deck's overview slide (presentation/10-overview.md) -->
+
+- **A — Data quality**: data exists, and is of sufficient quality
+- **B — Data provenance**: trustworthy, open / accessible
+- **C — Code**: exists, works, is reusable, comprehensible
+- **D — Documentation**: papers, README, actionable info
+
+## Pillar A: Data Quality
+
+<!-- TODO: expand on administrative vs. survey vs. business data, "fit for purpose," and
+     the challenges introduced by LLM-generated data (see presentation/20-pillar-a-data-quality.md) -->
+
+## Pillar B: Data Provenance
+
+<!-- TODO: expand on gold standards (statistical agencies, DOI/curation), traditional
+     concerns (data falsification cases), and the open question of LLM-invented data
+     (see presentation/30-pillar-b-intro.md, 03-sp500.md, 05-fraud.md, 10-what-can-you-do.md) -->
+
+## Pillar C: Code
+
+<!-- TODO: expand on capturing code quality, reproducibility statistics, and how this
+     connects to data availability (see presentation/40-pillar-c-code.md) -->
+
+## Pillar D: Documentation
+
+<!-- TODO: expand on documentation statistics and the recurring issues (too brief,
+     insider knowledge, undocumented) (see presentation/50-pillar-d-documentation.md) -->
+
+## Thoughts on Future Paths
+
+<!-- TODO: expand per-pillar forward-looking material, including the role of AI/LLMs
+     in data provenance, code quality, and documentation
+     (see presentation/90-thoughts-future-paths.md) -->
+
+## Conclusion
+
+<!-- TODO: closing synthesis -->
+
+```{r, child=c(here::here('99-links.md'))}
+```
