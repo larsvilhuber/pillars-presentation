@@ -2,9 +2,7 @@
 
 ## Data provenance
 
-::: {.img-placeholder}
-IMAGE PLACEHOLDER: pillars diagram with **B** highlighted
-:::
+![Pillar B](images/pillars-diagram-b.png)
 
 ## Part of data quality is provenance
 

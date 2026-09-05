@@ -2,9 +2,7 @@
 
 ## Four pillars
 
-::: {.img-placeholder}
-IMAGE PLACEHOLDER: 2x2 "puzzle" diagram of the four pillars (A / C on top row, B / D on bottom row)
-:::
+![The four pillars](images/pillars-diagram-all.png)
 
 ## The four pillars
 

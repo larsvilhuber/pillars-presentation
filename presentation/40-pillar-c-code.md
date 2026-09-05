@@ -2,9 +2,7 @@
 
 ## Code
 
-::: {.img-placeholder}
-IMAGE PLACEHOLDER: pillars diagram with **C** highlighted
-:::
+![Pillar C](images/pillars-diagram-c.png)
 
 ## Statistics / Analysis
 

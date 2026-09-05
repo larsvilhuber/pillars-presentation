@@ -2,9 +2,7 @@
 
 ## Data quality
 
-::: {.img-placeholder}
-IMAGE PLACEHOLDER: pillars diagram with **A** highlighted
-:::
+![Pillar A](images/pillars-diagram-a.png)
 
 ## What counts as "quality" data?
 

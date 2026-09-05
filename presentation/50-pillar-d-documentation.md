@@ -2,9 +2,7 @@
 
 ## Documentation
 
-::: {.img-placeholder}
-IMAGE PLACEHOLDER: pillars diagram with **D** highlighted
-:::
+![Pillar D](images/pillars-diagram-d.png)
 
 ## Statistics
 
