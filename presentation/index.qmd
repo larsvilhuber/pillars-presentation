@@ -66,22 +66,26 @@ WEBSITE_SHORT <- paste0(GITHUB_REPOSITORY_PARTS[1], ".github.io/", GITHUB_REPOSI
 ```{r, child=c(here::here("presentation",'20-pillar-a-data-quality.md'))}
 ```
 
-```{r, child=c(here::here("presentation",'30-pillar-b-intro.md'))}
+```{r, child=c(here::here("presentation",'30-pillar-b-provenance.md'))}
 ```
 
-```{r, child=c(here::here("presentation",'03-sp500.md'))}
-```
-
-```{r, child=c(here::here("presentation",'05-fraud.md'))}
-```
-
-```{r, child=c(here::here("presentation",'10-what-can-you-do.md'))}
-```
 
 ```{r, child=c(here::here("presentation",'40-pillar-c-code.md'))}
 ```
 
 ```{r, child=c(here::here("presentation",'50-pillar-d-documentation.md'))}
+```
+
+```{r, child=c(here::here("presentation",'60-pillar-a-now.md'))}
+```
+
+```{r, child=c(here::here("presentation",'61-pillar-b-now.md'))}
+```
+
+```{r, child=c(here::here("presentation",'62-pillar-c-now.md'))}
+```
+
+```{r, child=c(here::here("presentation",'63-pillar-d-now.md'))}
 ```
 
 ```{r, child=c(here::here("presentation",'90-thoughts-future-paths.md'))}

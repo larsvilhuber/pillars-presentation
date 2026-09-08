@@ -284,4 +284,35 @@ tools::md5sum(here::here("presentation","SP500.csv"))
 ::::
 
 
+## Transparency is the norm
+
+
+::::{.columns}  
+
+::: {.column width="50%"}
+
+![](images/Gemini_Generated_Image_bj8lf3bj8lf3bj8l.png)
+
+::: 
+::: {.column width="50%"}
+
+[nearly 5,000 authors](https://aeadataeditor.github.io/aea-cumulative-summary/impacts_of_aea_data_editing.html#authors-reached) who have had [their work](https://doi.org/10.3886/E159301V1) verified by the AEA Data Editor and team.
+
+:::
+::::
+
+## You can do it, too!
+
+::::{.columns}
+::: {.column width="20%"}
+:::
+::: {.column width="60%"}
+![You can do it, too!](images/Gemini_Generated_Image_wdh8jvwdh8jvwdh8.png)
+:::
+::: {.column width="20%"}
+:::
+::::
+
+
+
 

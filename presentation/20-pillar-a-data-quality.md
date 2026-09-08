@@ -4,18 +4,77 @@
 
 ![Pillar A](images/pillars-diagram-a.png)
 
-## What counts as "quality" data?
+## What counts as "quality" data? {.smaller}
 
-- Administrative data
+## What counts as "quality" data? {.smaller}
+
+::::{.columns}
+:::{.column width="50%"}
+
+- Official Statistics
+
+:::
+:::{.column width="50%"}
+
+[![](images/bls-gov.png)](https://www.bls.gov/)
+:::
+::::
+
+## What counts as "quality" data? {.smaller}
+
+::::{.columns}
+:::{.column width="50%"}
+
+- Official Statistics
 - High-quality survey data
-  - Survey data is traditionally well documented (methods reports)
-  - Administrative data: "fit for purpose"? Depends on usage, coverage — ultimately an expert assessment
-    - Often thinner, but larger
-- Business data: fine detail, but possibly non-representative
+  - traditionally well documented (methods reports)
 
-## Challenges (recap)
+:::
+:::{.column width="50%"}
 
-- LLM-generated data is popular
-  - Draw from an inference distribution
-  - Variability matters <span class="name-placeholder">[recent paper — reference TBD]</span>
-  - The set of "treatments" needs to expand <span class="name-placeholder">[RA additions — reference TBD]</span>
+[![](images/acs-methodology.png)](https://www.census.gov/programs-surveys/acs/methodology.html)
+
+:::
+::::
+
+## What counts as "quality" data? {.smaller}
+
+::::{.columns}
+:::{.column width="50%"}
+
+- Official Statistics
+- High-quality survey data
+- Administrative data: 
+  - "fit for purpose"? Depends on usage, coverage — ultimately an expert assessment
+  - Often thinner, but longer
+
+:::
+:::{.column width="50%"}
+
+[![](images/dst-registers.png)](https://www.dst.dk/en/TilSalg/Forskningsservice/Dokumentation)
+
+:::
+::::
+
+## What counts as "quality" data? {.smaller}
+
+::::{.columns}
+:::{.column width="50%"}
+
+
+- Official Statistics
+- High-quality survey data
+- Administrative data: 
+- Business data: 
+  - fine detail, but possibly non-representative
+  - designed for a different purpose
+  - often proprietary
+
+
+:::
+:::{.column width="50%"}
+
+[![](images/wrds-compustat.png)](https://wrds-www.wharton.upenn.edu/pages/about/data-vendors/sp-global-market-intelligence/)
+
+:::
+::::

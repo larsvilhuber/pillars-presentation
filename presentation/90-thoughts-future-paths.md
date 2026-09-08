@@ -24,13 +24,6 @@
   - <span class="name-placeholder">[Clemens — reference TBD]</span>
   - <span class="name-placeholder">[Dell — reference TBD]</span>
 
-## Code quality: the impact of AI
-
-- Should improve
-- But: complexity
-  - increased presence of scaffolding (Makefile, Python, Linux)
-- AI in secure environments?
-
 ## Documentation: AI can help
 
 - Consistency between article and code
