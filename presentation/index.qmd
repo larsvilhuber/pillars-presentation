@@ -2,7 +2,7 @@
 title: "Credibility of Economic Research"
 author:
   - "Lars Vilhuber"
-date: "TBD" # Uppsala talk date
+date: "2026-09-08" # Uppsala talk date
 format: 
   revealjs:
     scrollable: true
@@ -66,30 +66,39 @@ WEBSITE_SHORT <- paste0(GITHUB_REPOSITORY_PARTS[1], ".github.io/", GITHUB_REPOSI
 ```{r, child=c(here::here("presentation",'20-pillar-a-data-quality.md'))}
 ```
 
-```{r, child=c(here::here("presentation",'30-pillar-b-provenance.md'))}
+```{r, child=c(here::here("presentation",'21-pillar-b-provenance.md'))}
 ```
 
 
-```{r, child=c(here::here("presentation",'40-pillar-c-code.md'))}
+```{r, child=c(here::here("presentation",'22-pillar-c-code.md'))}
 ```
 
-```{r, child=c(here::here("presentation",'50-pillar-d-documentation.md'))}
+```{r, child=c(here::here("presentation",'23-pillar-d-documentation.md'))}
 ```
 
-```{r, child=c(here::here("presentation",'60-pillar-a-now.md'))}
+# Challenges and risks
+
+```{r, child=c(here::here("presentation",'30-pillar-a-data-quality-risks.md'))}
 ```
 
-```{r, child=c(here::here("presentation",'61-pillar-b-now.md'))}
+```{r, child=c(here::here("presentation",'31-pillar-b-provenance-risks.md'))}
 ```
 
-```{r, child=c(here::here("presentation",'62-pillar-c-now.md'))}
+```{r, child=c(here::here("presentation",'32-pillar-c-code-risks.md'))}
 ```
 
-```{r, child=c(here::here("presentation",'63-pillar-d-now.md'))}
+```{r, child=c(here::here("presentation",'40-code-quality-repcon.md'))}
 ```
 
-```{r, child=c(here::here("presentation",'90-thoughts-future-paths.md'))}
+```{r, child=c(here::here("presentation",'33-pillar-d-documentation-risks.md'))}
 ```
+
+# Some thoughts about solutions
+
+```{r, child=c(here::here("presentation",'50-solutions.md'))}
+```
+
+
 
 
 # The end!

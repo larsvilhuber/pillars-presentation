@@ -57,3 +57,22 @@
 ::::
 
 # How can we know that a data source is reliably obtained?
+
+## Technical means
+
+- Data publisher adds **checksums**
+- User adds **checksums** (chaining verification)
+- Human-moderated or automated verification verifies checksums
+
+## Human means
+
+- Data Editor connects with data publisher
+  - Routinely done for "unnamed" data sources under NDA!
+- Replicators (see *I4R*) 
+  - re-obtain data from claimed source, verify
+
+## You don't
+
+- Replication does not require that data provenance be verified - it may *collect new data*
+  - Availability of survey/experiment data
+  - Availability of alternate sources

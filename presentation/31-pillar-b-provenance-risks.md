@@ -1,31 +1,14 @@
-# Pillar B: Data Provenance
+# Pillar B: Risks to Data Provenance
 
-## Data provenance
 
 ![Pillar B](images/pillars-diagram-b.png)
 
-## Part of data quality is provenance
-
-![Infinite monkeys...](images/monkeys.jpg)
-
-## Gold standard
-
-- Statistical agency surveys
-- Big research institutions
-
-## Gold standard: curation
-
-- DOI assignment, curation
-
-## Examples
-
-![](images/iab-metadata-screenshot.png)
-
-## Examples
-
-![](images/statcan-example.png)
 
 ## DOI: Mostly absent at statistical agencies
+
+![](images/census-example-no-doi.png)
+
+## Curation: Often endangered
 
 ![](images/census-404.png)
 
@@ -37,22 +20,10 @@
 
 [![](images/drp-feature-6.png)](https://www.datarescueproject.org/)
 
-## Worse: concerns 
-
-Argentinian inflation data[^caballo]
-
-![](./images/caballo-2013-argentina-inflation.png)
-
-[^caballo]: Cavallo, Alberto. 2013. “Online and Official Price Indexes: Measuring Argentina’s Inflation.” Journal of Monetary Economics 60 (2): 152–65. https://doi.org/10.1016/j.jmoneco.2012.10.002.
-
-
 ## Surveys and such  {.smaller}
 
 
-
-## Who is this person?
-
-![1](images/retraction-watch-smeesters-focus.png)
+![Who is this person?](images/retraction-watch-smeesters-focus.png)
 
 ## Dirk Smeesters
 
@@ -73,7 +44,11 @@ Argentinian inflation data[^caballo]
 ::::
 
 
-## Who is this person? (2)
+## Who is this person? (2) 
+
+![](images/gino-nyt-face.png)
+
+## The case of Gino { transition=fade }
 
 ![Francesca Gino](images/gino-nyt.png)
 

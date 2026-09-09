@@ -1,0 +1,9 @@
+# Dependencies for build_pillars.py. The rest of the project is R/Quarto;
+# these are only needed to regenerate presentation/images/pillars-diagram-*.png.
+#
+#   python3 -m pip install -r presentation/puzzles/requirements.txt
+#
+# Lower bounds are the versions the pipeline was developed and verified against.
+numpy>=2.2
+scipy>=1.18
+pillow>=11.3,<13

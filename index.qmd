@@ -59,17 +59,17 @@ thoughts on future paths.
 
 <!-- TODO: expand on gold standards (statistical agencies, DOI/curation), traditional
      concerns (data falsification cases), and the open question of LLM-invented data
-     (see presentation/30-pillar-b-intro.md, 03-sp500.md, 05-fraud.md, 10-what-can-you-do.md) -->
+     (see presentation/21-pillar-b-provenance.md, 03-sp500.md, 05-fraud.md, 10-what-can-you-do.md) -->
 
 ## Pillar C: Code
 
 <!-- TODO: expand on capturing code quality, reproducibility statistics, and how this
-     connects to data availability (see presentation/40-pillar-c-code.md) -->
+     connects to data availability (see presentation/22-pillar-c-code.md) -->
 
 ## Pillar D: Documentation
 
 <!-- TODO: expand on documentation statistics and the recurring issues (too brief,
-     insider knowledge, undocumented) (see presentation/50-pillar-d-documentation.md) -->
+     insider knowledge, undocumented) (see presentation/23-pillar-d-documentation.md) -->
 
 ## Thoughts on Future Paths
 

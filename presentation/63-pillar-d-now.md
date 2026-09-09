@@ -8,10 +8,10 @@
 
 :::{.column width="50%"}
 
-- Too brief
-- "Insider" knowledge
-- Not documented in the article, but no other place either
-- AI-written README files: more text, not necessarily more information
+- AI-written README files: 
+  - lengthier
+  - more complete
+  - possibly TOO long
 
 :::
 ::::
