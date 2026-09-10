@@ -2,7 +2,7 @@
 
 ## Four pillars
 
-![The four pillars](images/pillars-diagram-all.png)
+![Four pillars](images/pillars-diagram-all.png)
 
 ## The four pillars
 
