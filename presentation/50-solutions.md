@@ -4,7 +4,7 @@
 ![Four pillars](images/pillars-diagram-all.png)
 
 
-## A - Data quality
+# A - Data quality
 
 ::::{.columns}
 :::{.column width="50%"}
@@ -126,3 +126,63 @@ Report $\bar{q}_m$ with variance $T_p = b_m/m + \bar{v}_m$
 
 - $\bar{v}_m$:  sampling variability you would face even with a perfectly deterministic instrument
 - $b_m$:  variability **added by imputation process**
+
+
+# B - Data provenance
+
+::::{.columns}
+:::{.column width="50%"}
+
+![Pillar B](images/pillars-diagram-b.png)
+:::
+
+:::{.column width="50%"}
+
+:::
+::::
+
+## 
+
+- Evidence: DOI &rarr; checksum &rarr; verifiable
+- Testimony: Data Editor serving as verifier
+  - e.g. an image of the title-page footnote
+  - also has limits <span class="name-placeholder">[e.g. Chinese mobile network case — reference TBD]</span>
+- Transparency!
+
+
+# C - Code
+
+::::{.columns}
+:::{.column width="50%"}
+
+![Pillar C](images/pillars-diagram-c.png)
+:::
+
+:::{.column width="50%"}
+
+- Verified reproducibility - addresses completeness, credibility, to some extent trust
+  - Mention reproducibility services
+  - Mention SIVACOR/TRACE
+
+:::
+::::
+
+
+# D - Documentation
+
+
+::::{.columns}
+:::{.column width="50%"}
+
+![Pillar D](images/pillars-diagram-d.png)
+
+:::
+:::{.column width="50%"}
+
+- Potential for LLM assistance
+  - Preparing documentation
+  - Ensuring consistency between documentation (article) and code (Miklos' harness)
+
+:::
+::::
+
